@@ -1,0 +1,70 @@
+Create table Student(
+Stdno Number(4) Primary Key,
+Sname Varchar2(20),
+JOB Date,
+Fee Number(5));
+
+
+Alter table Student Constraint Primary Key(Stdno);
+
+
+Create table Student(
+Stdno Number(4),
+Sname Varchar2(20)
+Deptno Number(2) Constraint Std_Fkey
+References Dept(deptno),Fee Number(5));
+
+Create table Student(
+Stdno Number(4),
+Sname Varchar2(20)
+Deptno Number(2),Fee Number(5),
+Constraint Std_Fkey Foreign key(Deptno)
+References Dept(deptno));
+
+Create table Student( 
+Stdno Number(4),
+Sname Varchar2(20),Fee Number(5)
+Constraint std_sal_ck Check(Fee>50000
+and Fee <100000), Dept Numb(10));
+
+Create table Student( Stdno Number(4),
+Sname Varchar2(20),Fee Number(5), Dept
+Numb(10), Constraint Std_sal_ck
+Check(Fee>50000 and Fee <100000));
+
+Create table Student(
+Stdno Number(4),
+Sname Varchar2(20),
+Design varcahr2(10) Constraint uk Unique,
+Fee Number(5),
+Dept Numb(10));
+
+Create table student(
+Empno Number(4),
+Ename Varchar2(20),
+Design varcahr2(10),
+Sal Number(5),
+Dept Numb(10), Constraint uk
+Unique(Design));
+
+Create table Employee(
+Empno Number(4),
+Ename Varchar2(20),
+Design varcahr2(10) Constraint N_null Not
+Null, Sal Number(5),
+Dept Numb(10));
+
+Create table Employee(
+Empno Number(4),
+Ename Varchar2(20),
+Design varcahr2(10),
+Sal Number(5),
+Dept Numb(10) Constraint N_null Not
+Null(Design));
+
+Create table Employee(
+Empno Number(4),
+Ename Varchar2(20)
+Sex Char(1) Default ‘M’,
+Design varcahr2(10), Sal Number(5),
+Dept Numb(10));
